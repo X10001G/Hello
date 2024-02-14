@@ -1,5 +1,5 @@
 [rewrite_local]
-^https?:\/\/api\.shijianshubao\.com.*?.*? url script-response-body gsxb.js
+^https?:\/\/api\.shijianshubao\.com.*?.*? url script-response-body https://raw.githubusercontent.com/X10001G/Hello/main/gsxb
 [mitm]
 hostname = api.shijianshubao.com
 */
