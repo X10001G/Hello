@@ -1,7 +1,7 @@
 /*
 海豚 
 [rewrite_local]
-^http[s]?:\/\/english.dolphinmedia.cn\/dolphin\/* url script-response-body dolphinmedia.js
+^http[s]?:\/\/english.dolphinmedia.cn\/dolphin\/* url script-response-body https://raw.githubusercontent.com/X10001G/Hello/main/HTYY
 [mitm] 
 hostname = english.dolphinmedia.cn
 
