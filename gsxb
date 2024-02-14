@@ -1,0 +1,8 @@
+[rewrite_local]
+^https?:\/\/api\.shijianshubao\.com.*?.*? url script-response-body gsxb.js
+[mitm]
+hostname = api.shijianshubao.com
+*/
+var body=$response.body;
+body = body.replace(/isFree\":false/g,'isFree":true').replace(/avatar\":null/g,'avatar":true').replace(/vipEndTimestamp\":\d+/g,'vipEndTimestamp":3705800919000');
+$done(body);
