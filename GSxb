@@ -8,7 +8,7 @@
 *******************************
 %¥
 [rewrite_local]
-^https?:\/\/api\.shijianshubao\.com\/account.*? url script-response-body GSXB.js
+^https?:\/\/api\.shijianshubao\.com\/account.*? url script-response-body https://raw.githubusercontent.com/X10001G/Hello/main/GSxb
 
 
 [mitm]
