@@ -4,8 +4,6 @@
 
 [mitm]
 hostname = api.shijianshubao.com
-%¥
-*******************************/
 var body=$response.body;
 body = body.replace(/isFree\":false/g,'isFree":true');
 body = body.replace(/avatar\":null/g,'avatar":true');
