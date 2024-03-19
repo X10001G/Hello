@@ -8,9 +8,9 @@
 *******************************
 %¥
 [rewrite_local]
-^https?:\/\/api\.revenuecat\.com.*?.*? url script-request-header Pillow.js
+^https?:\/\/api\.revenuecat\.com.*?.*? url script-request-header https://raw.githubusercontent.com/X10001G/Hello/main/Pillow.js
 
-^https?:\/\/api\.revenuecat\.com.*?*? url script-response-body Pillow.js
+^https?:\/\/api\.revenuecat\.com.*?*? url script-response-body https://raw.githubusercontent.com/X10001G/Hello/main/Pillow.js
 
 
 [mitm]
