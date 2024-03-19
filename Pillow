@@ -1,0 +1,46 @@
+/******************************
+⚠️如果放远程，请把Pillow.js替换成运程链接⚠️
+  🧚🏻‍♂️作者：🍡魔法师、木木🍡
+  wx交流群：1077223830
+🫧脚本名称:pillow
+🫧建议配合working copy一起食用
+✈️working copy下载地址https://apps.apple.com/app/id896694807✈️
+*******************************
+%¥
+[rewrite_local]
+^https?:\/\/api\.revenuecat\.com.*?.*? url script-request-header Pillow.js
+
+^https?:\/\/api\.revenuecat\.com.*?*? url script-response-body Pillow.js
+
+
+[mitm]
+hostname = api.revenuecat.com
+%¥
+*******************************/
+
+var Url = $request.url;
+function setQueryString(key, val) { 
+    var url = Url.split('?'), search=url[1];
+    var query = {};
+    if (search) {
+        search.split('&').forEach((item) => {
+            var arr = item.split('=');
+            query[arr[0]] = arr[1];
+        });
+    }
+    query[key] = val;
+    var queryArr = [];
+    for (var p in query) {
+        queryArr.push(p + '=' + query[p]);
+    }
+    return url[0]+'?'+queryArr.join('&');
+};
+
+
+console.log(Url);
+$done({ url:Url });
+
+//
+var body=$response.body;
+body = body.replace(/\{"request_date\":.+/g,'{"request_date":"2024-03-19T15:40:25Z","request_date_ms":1710862825045,"subscriber":{"entitlements":{"premium":{"expires_date":"6666-06-06T06:06:06Z","product_identifier":"com.neybox.pillow.premium.year.specialoffer","purchase_date":"2023-02-23T02:33:33Z"}},"first_seen":"2024-03-12T11:53:35Z","last_seen":"2024-03-19T15:39:52Z","management_url":null,"non_subscriptions":{},"original_app_user_id":"$RCAnonymousID:8cd31c90fefc42af910677e4ae572b13","original_application_version":"728","original_purchase_date":"2023-02-23T03:33:33Z","other_purchases":{},"subscriptions":{"com.neybox.pillow.premium.year.specialoffer":{"expires_date":"6666-06-06T06:06:06Z","original_purchase_date":"2023-02-23T02:33:33Z","purchase_date":"2023-02-23T02:33:33Z","ownership_type":"PURCHASED","store":"app_store"}}}}');
+$done(body);
