@@ -8,9 +8,9 @@
 *******************************
 %¥
 [rewrite_local]
-^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?.*? url script-request-header xykk.js
+^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?.*? url script-request-header https://raw.githubusercontent.com/X10001G/Hello/main/xykk.js
 
-^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?*? url script-response-body xykk.js
+^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?*? url script-response-body https://raw.githubusercontent.com/X10001G/Hello/main/xykk.js
 
 
 [mitm]
