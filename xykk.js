@@ -8,7 +8,7 @@
 *******************************
 %¥
 [rewrite_local]
-^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?.*? url script-response-body https://raw.githubusercontent.com/X10001G/Hello/main/xykk.js
+^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?.*? url script-response-body https://github.com/X10001G/Hello/blob/main/xykk.js
 
 
 [mitm]
