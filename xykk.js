@@ -8,13 +8,40 @@
 *******************************
 %¥
 [rewrite_local]
-^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?.*? url script-response-body https://raw.githubusercontent.com/X10001G/Hello/main/xykk.js
+^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?.*? url script-request-header xykk.js
+
+^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?*? url script-response-body xykk.js
 
 
 [mitm]
 hostname = api.pollykann.com,buy.itunes.apple.com
 %¥
 *******************************/
+
+var Url = $request.url;
+function setQueryString(key, val) { 
+    var url = Url.split('?'), search=url[1];
+    var query = {};
+    if (search) {
+        search.split('&').forEach((item) => {
+            var arr = item.split('=');
+            query[arr[0]] = arr[1];
+        });
+    }
+    query[key] = val;
+    var queryArr = [];
+    for (var p in query) {
+        queryArr.push(p + '=' + query[p]);
+    }
+    return url[0]+'?'+queryArr.join('&');
+};
+Url = setQueryString("isVip","1");
+Url = setQueryString("vipType","1");
+
+console.log(Url);
+$done({ url:Url });
+
+//
 var body=$response.body;
 body = body.replace(/"avatar\":null/g,'"avatar":"pro"');
 body = body.replace(/"pollykannVipState\":null/g,'"pollykannVipState":true');
