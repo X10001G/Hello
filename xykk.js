@@ -1,74 +1,79 @@
-/******************************
-⚠️如果放远程，请把xykk.js替换成运程链接⚠️
-  🧚🏻‍♂️作者：🍡魔法师、木木🍡
-  wx交流群：1077223830
-🫧脚本名称:小樱看看➕Melody_53098有售后保障
-🫧建议配合working copy一起食用
-✈️working copy下载地址https://apps.apple.com/app/id896694807✈️
-*******************************
-%¥
-[rewrite_local]
-^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?.*? url script-request-header https://raw.githubusercontent.com/X10001G/Hello/main/xykk.js
+var objc = JSON.parse($response.body);
 
-^http?:\/\/api\.pollykann\.com.*?|https?:\/\/buy\.itunes\.apple\.com.*?*? url script-response-body https://raw.githubusercontent.com/X10001G/Hello/main/xykk.js
+objc = {
+"status" : 0,
+"receipt" : {
+"receipt_type" : "Production",
+"app_item_id" : 1532875441,
+"receipt_creation_date" : "2023-09-09 16:06:26 Etc/GMT",
+"bundle_id" : "com.pollykann.app",
+"original_purchase_date" : "2023-09-09 16:00:00 Etc/GMT",
+"in_app" : [
+{
+"quantity" : "1",
+"purchase_date_ms" : "1694250549000",
+"expires_date" : "2099-09-09 09:09:09 Etc/GMT",
+"expires_date_pst" : "2099-09-09 06:06:06 America/Los_Angeles",
+"is_in_intro_offer_period" : "false",
+"transaction_id" : "490001314520000",
+"is_trial_period" : "false",
+"original_transaction_id" : "490001314520000",
+"purchase_date" : "2023-09-09 09:09:09 Etc/GMT",
+"product_id" : "vip.forever.pollykann",
+"original_purchase_date_pst" : "2023-09-09 02:09:10 America/Los_Angeles",
+"in_app_ownership_type" : "PURCHASED",
+"original_purchase_date_ms" : "1694250550000",
+"web_order_line_item_id" : "490000123456789",
+"expires_date_ms" : "4092599349000",
+"purchase_date_pst" : "2023-09-09 02:09:09 America/Los_Angeles",
+"original_purchase_date" : "2023-09-09 09:09:10 Etc/GMT"
+}
+],
+"adam_id" : 1532875441,
+"receipt_creation_date_pst" : "2023-09-09 06:06:26 America/Los_Angeles",
+"request_date" : "2023-09-09 16:06:27 Etc/GMT",
+"request_date_pst" : "2023-09-09 06:06:27 America/Los_Angeles",
+"version_external_identifier" : 861643821,
+"request_date_ms" : "1694273635000",
+"original_purchase_date_pst" : "2023-09-09 06:00:00 America/Los_Angeles",
+"application_version" : "275",
+"original_purchase_date_ms" : "1694273430000",
+"receipt_creation_date_ms" : "1694273634000",
+"original_application_version" : "275",
+"download_id" : 503003801132085600
+},
+"latest_receipt_info" : [
+{
+"quantity" : "1",
+"purchase_date_ms" : "1694250549000",
+"expires_date" : "2099-09-09 09:09:09 Etc/GMT",
+"expires_date_pst" : "2099-09-09 06:06:06 America/Los_Angeles",
+"is_in_intro_offer_period" : "false",
+"transaction_id" : "490001314520000",
+"is_trial_period" : "false",
+"original_transaction_id" : "490001314520000",
+"purchase_date" : "2023-09-09 09:09:09 Etc/GMT",
+"product_id" : "vip.forever.pollykann",
+"original_purchase_date_pst" : "2023-09-09 02:09:10 America/Los_Angeles",
+"in_app_ownership_type" : "PURCHASED",
+"original_purchase_date_ms" : "1694250550000",
+"web_order_line_item_id" : "490000123456789",
+"expires_date_ms" : "4092599349000",
+"purchase_date_pst" : "2023-09-09 02:09:09 America/Los_Angeles",
+"original_purchase_date" : "2023-09-09 09:09:10 Etc/GMT"
+}
+],
+"latest_receipt" : "t.me/crackhub_69",
+"environment" : "Production",
+"pending_renewal_info" : [
+{
+"product_id" : "vip.forever.pollykann",
+"original_transaction_id" : "490001314520000",
+"auto_renew_product_id" : "vip.forever.pollykann",
+"auto_renew_status" : "1"
+}
+],
 
-
-[mitm]
-hostname = api.pollykann.com,buy.itunes.apple.com
-%¥
-*******************************/
-
-var Url = $request.url;
-function setQueryString(key, val) { 
-    var url = Url.split('?'), search=url[1];
-    var query = {};
-    if (search) {
-        search.split('&').forEach((item) => {
-            var arr = item.split('=');
-            query[arr[0]] = arr[1];
-        });
-    }
-    query[key] = val;
-    var queryArr = [];
-    for (var p in query) {
-        queryArr.push(p + '=' + query[p]);
-    }
-    return url[0]+'?'+queryArr.join('&');
 };
-Url = setQueryString("isVip","1");
-Url = setQueryString("vipType","1");
 
-console.log(Url);
-$done({ url:Url });
-
-//
-var body=$response.body;
-body = body.replace(/"avatar\":null/g,'"avatar":"pro"');
-body = body.replace(/"pollykannVipState\":null/g,'"pollykannVipState":true');
-body = body.replace(/tingleeVipState\":null/g,'tingleeVipState":true');
-body = body.replace(/"freeForVip\":false/g,'"freeForVip":true');
-body = body.replace(/isPurchased\":false/g,'isPurchased":true');
-body = body.replace(/app_item_id\":\d+/g,'app_item_id":6450832499');
-body = body.replace(/in_app\":[]/g,'in_app" : [
-      {
-        "quantity" : "1",
-        "purchase_date_ms" : "1705501038000",
-        "expires_date" : "2099-09-09 14:17:18 Etc/GMT",
-        "expires_date_pst" : "2099-09-09 06:17:18 America/Los_Angeles",
-        "is_in_intro_offer_period" : "false",
-        "transaction_id" : "320001692332200",
-        "is_trial_period" : "false",
-        "original_transaction_id" : "320001692332200",
-        "purchase_date" : "2024-01-17 14:17:18 Etc/GMT",
-        "product_id" : "vip.forever.pollykann",
-        "original_purchase_date_pst" : "2024-01-17 06:17:21 America/Los_Angeles",
-        "in_app_ownership_type" : "PURCHASED",
-        "original_purchase_date_ms" : "1705501041000",
-        "web_order_line_item_id" : "320000788106651",
-        "expires_date_ms" : "4092595200000",
-        "purchase_date_pst" : "2024-01-17 06:17:18 America/Los_Angeles",
-        "original_purchase_date" : "2024-01-17 14:17:21 Etc/GMT"
-      }
-    ]');
-body = body.replace(/adam_id\":\d+/g,'adam_id":6450832499');
-$done(body);
+$done({ body: JSON.stringify(objc) });
