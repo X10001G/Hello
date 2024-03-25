@@ -1,3 +1,9 @@
+[rewrite_local]
+^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/X10001G/Hello/main/xykk.js
+
+
+[mitm]
+hostname = api.pollykann.com
 var objc = JSON.parse($response.body);
 
 objc = {
