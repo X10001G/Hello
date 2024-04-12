@@ -1,0 +1,320 @@
+[rewrite_local]
+^https:\/\/sg\.joytunes\.com\/server url script-response-body https://raw.githubusercontent.com/X10001G/Hello/main/simply guitar.js
+
+
+[mitm]
+hostname = sg.joytunes.com
+var objc = JSON.parse($response.body);
+objc = {
+  "accessTokenValid": true,
+  "progressData": {
+    "PFL65B2EA9B10F107.07671882": {
+      "rNPSSurveyIDToSeenDate": {
+      },
+      "isTarget": true,
+      "levelIdToGrade": {
+      },
+      "seenEvents": [
+        "MyInstrumentsSeen"
+      ],
+      "seenCourseBoxes": [
+        "BarreChordsBasics1Box",
+        "ChordBasics10Box",
+        "ChordBasics5Box",
+        "ChordBasics6Box",
+        "ChordBasics7Box",
+        "ChordBasics9Box",
+        "FingerpickingBasics1Box",
+        "GuitarBasics10Box",
+        "GuitarBasics11Box",
+        "GuitarBasics6_ExcitingBox",
+        "GuitarBasics7Box",
+        "GuitarBasics8Box",
+        "GuitarBasics9Box",
+        "GuitarEssentials1_ExcitingBox",
+        "GuitarEssentials2_ExcitingBox",
+        "PickingFoundationsBox",
+        "RockLegend2_ExcitingBox",
+        "RockLegend3Box",
+        "RockLegend4Box",
+        "SongFocusedCoursesLesson1_OriginalBox",
+        "SongFocusedCoursesLesson2_V2Box",
+        "SongFocusedCoursesLesson3_V2Box",
+        "SongFocusedCoursesLesson4_V2Box",
+        "SongFocusedCourses_RedemptionSongBox",
+        "SongFocusedCourses_RockLegend1_EChordBox",
+        "SongFocusedCourses_WhyDyouOnlyCallMeBox",
+        "StrummingBasics1_NoPCBox",
+        "StrummingBasics2Box",
+        "StrummingBasics3Box"
+      ],
+      "practiceTimeInfo": {
+        "shouldLaunchSuccessScreen": false,
+        "timePracticedToday": 0,
+        "lastCompletedDay": "",
+        "startDate": "",
+        "dayCount": 0,
+        "weeksCount": 0,
+        "lastPracticedOnDate": ""
+      },
+      "seenPracticeMilestoneVideos": [
+      ],
+      "lastTuneEventDate": "0001-01-01 05:53",
+      "favoriteSongs_version": 0,
+      "alwaysOverrideProperties": [
+        "lastUnlockedWorkoutLevels",
+        "notLearnedStrings"
+      ],
+      "levelIdToProgress": {
+      },
+      "chordIdToProgress": {
+      },
+      "userSelectedSongsVersion": 0,
+      "isPurchasingProfile": true,
+      "lastUnlockedWorkoutLevels": [
+      ],
+      "melodyIdToProgress": {
+      },
+      "headphoneTipDismissCount": 0,
+      "skills": [
+      ],
+      "userSelectedSongs": {
+      },
+      "surveyIdToSurveyState": {
+      },
+      "versionBasedProperties": [
+        "currentQuestId",
+        "favoriteSongs",
+        "practiceTimeInfo",
+        "streakInfo",
+        "userSelectedSongs"
+      ],
+      "songIdToSongState": {
+      },
+      "courseIdToLastProgressDate": {
+      },
+      "seenInfoVideos": [
+      ],
+      "streakInfo": {
+        "freezesUsed": 0,
+        "streakCount": 0,
+        "shouldLaunchCelebrationScreen": false,
+        "shouldLaunchFreezeUsedScreen": false,
+        "latestStreakDate": "",
+        "freezeCount": 2
+      },
+      "seenEventsTimestamps": {
+        "MyInstrumentsSeen": "2024-01-26 04:56"
+      },
+      "songIdToProgress": {
+      },
+      "notLearnedStrings": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "currentQuestId_version": 0,
+      "lastPassedMusicLevelDate": "0001-01-01 05:53",
+      "streakInfo_version": 0,
+      "currentQuestId": null,
+      "didStopShowingCustomAnnouncement": false,
+      "lastSBLUnlockingProgressMessagesPerSectionSeen": {
+      },
+      "specialSongsAnnouncementSeenIds": [
+      ],
+      "favoriteSongs": [
+      ],
+      "accountState": {
+        "earlyAdopter": false,
+        "lastLaunchDate": "2024-01-26 05:46",
+        "seenEventsTimestamps": {
+          "WhoIsPlayingWithMyInstrumentsTabSeenEvent": "2024-01-26 05:46",
+          "LastGuitarReferralAnimationDate": "2024-01-26 04:41"
+        },
+        "isParentsButtonTapped": false,
+        "onboardingCompleted": true,
+        "receivedEarlyAdoptersGift": false,
+        "lastSeenWhatsNewMessage": 1.11899995803833,
+        "analyticsProfile": {
+          "attribution": "",
+          "learners": "me",
+          "me_they_practice": "daily",
+          "me_profile": "continue",
+          "me_timeCommitment": "continue",
+          "me_they_chords": "no",
+          "me_n_other_profile": "minor",
+          "me_no_xp": "continue",
+          "me_tune": "no",
+          "me_timeCommitment3": "evening",
+          "me_they_no_xp": "continue",
+          "me_they_timeCommitment6": "continue",
+          "intro": "start",
+          "me_timeCommitment2": "continue",
+          "me_they_timeCommitment2": "continue",
+          "me_they_genre": "",
+          "me_they_goals": "",
+          "type": "notsure",
+          "me_timeCommitment6": "continue",
+          "me_genre": "",
+          "me_goals": "",
+          "me_they_tune": "no",
+          "me_practice": "not_sure",
+          "headphones": "yes_hp",
+          "me_timeCommitment5": "30",
+          "me_n_other_cheers": "continue",
+          "age": "22",
+          "me_they_timeCommitment": "continue",
+          "personalize": "start",
+          "me_timeCommitment4": "continue",
+          "me_chords": "no",
+          "guitar": "yes"
+        },
+        "numReferralsSent": 0,
+        "lastModified": 1706228198.21442
+      },
+      "skillIdToProgress": {
+      },
+      "practiceTimeInfo_version": 0,
+      "lastWorkoutGenerationDate": "0001-01-01 05:53",
+      "lastSBLUnlockingProgressMessagesPerSectionSeen_version": 0,
+      "didStopShowingPianoAnnouncement": true,
+      "migratedBatchIds": [
+        "v2.5_cb2_gb2_diffFix",
+        "MemmoryRiff",
+        "ChordBasics1OriginalBoss_SimpleChordsV2",
+        "altFirstCourseBatchP1",
+        "SongSelect_v2Mix_GuitarBasics1Alt_Shorter_SS",
+        "SongSelect_WhatsNextTeens_1",
+        "WhatsNextOldTest",
+        "SongSelect_WhatsNextTeens_2",
+        "ExclusionListLate2022",
+        "OriginalLicenseFriendlyBGM_ChordBasics2_DiffFix",
+        "TangibleMemory",
+        "v2.3_toChordtrainer",
+        "GTR_RET_BRAZE_ChordSwitching_Stars_ChordBasics3_StarLevels",
+        "GTR_MON_CB1NirvanaV2_GB1SongSelectAdults_allAges_ChordBasics1NirvanaV3",
+        "OriginalLicenseFriendlyBGM_RockLegend1",
+        "OriginalLicenseFriendlyBGM_GuitarBasics1LicenseFriendlyBGM",
+        "tiktok",
+        "GTR_MON_CB1NirvanaV2",
+        "shortergb1",
+        "GTR_RET_BRAZE_ChordSwitching_Stars_ChordBasics5",
+        "DuckingTest",
+        "OriginalLicenseFriendlyBGM_GuitarBasics2_DiffFix",
+        "altFirstCourseBatchP3",
+        "GTR_MON_GB1HardMode_ChordBasics1_ChordSwitching",
+        "TangibleMemoryStatic_V2",
+        "OriginalLicenseFriendlyBGM_ChordBasics3",
+        "GTR_RET_StarLevelCoursesAndSongsTest",
+        "GTR_MON_CB1Nirvana",
+        "ChordTrainerOldTest",
+        "DailyWorkoutOldTest",
+        "GTR_RET_BRAZE_ChordSwitching_Stars_ChordBasics2_StarLevels",
+        "ExclusionList_Q2_2022",
+        "DegrindTest",
+        "ChordBasics1OriginalBoss_SimpleChords_SimpleChordsGB1",
+        "TangibleMemoryStaticV4",
+        "SongSelect_WhatsNextTeens_3",
+        "GTR_RET_BRAZE_ChordSwitching_ChordBasics3_ChordSwitching",
+        "CB1ExtendedOldTest",
+        "GTR_MON_CB1NirvanaV2_GB1SongSelectAdults_allAges_GuitarBasics1_SongSelectAdults",
+        "TangibleValueOldTest",
+        "OriginalLicenseFriendlyBGM_ChordBasics5",
+        "SongSelect_WhatsNextTeens_4",
+        "OriginalLicenseFriendlyBGM_GuitarBasics1Alt_Shorter_SSV2Mix",
+        "exclusion_list_fixes",
+        "GB1AltWhatsNextOldTest",
+        "SongSelect_WhatsNextTeens_5",
+        "CHSWDiffFixStars",
+        "GTR_RET_BRAZE_ChordSwitching_Stars_RockLegend1_StarLevels",
+        "ChordBasics4_Boss_Fix",
+        "LoveStory_Replacement",
+        "Removing_CB1Optimized",
+        "ChordBasics1OriginalBoss_SimpleChords_ChordBasics1OriginalBoss",
+        "OriginalLicenseFriendlyBGM_GuitarBasics3",
+        "whatsNext",
+        "ChordBasics6Exclusion",
+        "altFirstCourseBatchP2",
+        "GTR_RET_BRAZE_ChordSwitching_ChordBasics2_ChordSwitching",
+        "coursesBatch",
+        "GTR_RET_BRAZE_ChordSwitching_Stars_ChordBasics4",
+        "SongSelect_WhatsNextTeens_6",
+        "PerfectInGB1",
+        "SongSelect__22Q1",
+        "OriginalLicenseFriendlyBGM_ChordBasics4"
+      ],
+      "lastWorkoutDate": "0001-01-01 05:53"
+    }
+  },
+  "accessToken": "ee4ea7c61671c8f24be871ab1ad91a24",
+  "accountInfo": {
+    "hasPassword": false,
+    "EmailVerificationTime": null,
+    "openProductIDs": [
+    ],
+    "seenApps": {
+      "SimplyGuitar": "3091"
+    },
+    "rNPSRandomDay": "24",
+    "registrationSource": "SimplyGuitar",
+    "membershipInfo": {
+      "membershipDescription": "Premium member",
+      "familyIapID": "com.joytunes.sg.subscription_onemonth_30_FamilyPlan_FiveProfiles_trial_bundle_family",
+      "membershipTier": "premium_home",
+      "profilesAccess": "FAMILY",
+      "planDuration": "onemonth",
+      "membershipType": "JOYTUNESBUNDLE",
+      "daysRemaining": 7000000,
+      "autoRenewable": 1,
+      "dateStarted": "2024-01-25",
+      "isTrialPeriod": 1,
+      "currentIapID": "com.joytunes.sg.subscription_onemonth_30_FamilyPlan_FiveProfiles_trial_bundle",
+      "upgradeIapID": null,
+      "daysPassed": 1,
+      "dateExpire": "2099-02-01",
+      "isAutoRenew": false
+    },
+    "role": "Pending",
+    "personalInfo": {
+      "phone": null,
+      "city": null,
+      "firstName": null,
+      "country": null,
+      "facebookID": null,
+      "state": null,
+      "lastName": null
+    },
+    "accountID": "ACC65B2EA9AE68609.51317117",
+    "email": null,
+    "registrationTime": "2024-01-25 23:11:22"
+  },
+  "error": null,
+  "profilesList": [
+    {
+      "profileID": "PFL65B2EA9B10F107.07671882",
+      "profilePersonalInfo": {
+        "lessonDay": null,
+        "avatarCustomImageURL": null,
+        "yearOfBirth": 2002,
+        "nickname": "Monarch",
+        "avatarName": "sp_23"
+      },
+      "demoModeEnabled": "0",
+      "creationTime": "2024-01-25 23:11:23",
+      "sharedAccountInfo": null,
+      "isPremium": true,
+      "profileType": "Normal",
+      "shareNoAnswer": false,
+      "shareStatus": "NotShared",
+      "privileges": {
+        "HomeConnection": {
+          "homeMembershipTier": "free_home"
+        }
+      }
+    }
+  ]
+}
+$done({ body: JSON.stringify(objc) });
